@@ -1,0 +1,624 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #18191b;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 44px;
+    padding: 0 16px;
+    background: #2d528f;
+    display: flex;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.logolink {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 28px;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav span,
+.nav a {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 430px;
+    height: 29px;
+    padding: 0 9px;
+    background: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #292b2e;
+    font-size: 13px;
+}
+
+.search input::placeholder {
+    color: #888888;
+}
+
+.search > svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: #2d528f;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.searchresults {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    display: none;
+    padding: 5px;
+    background: #ffffff;
+    border: 1px solid #d2d3d6;
+    border-radius: 7px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.searchresults.visible {
+    display: block;
+}
+
+.searchitem {
+    min-height: 48px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.searchitem:hover {
+    background: #f0f1f3;
+}
+
+.searchitem img {
+    width: 58px;
+    height: 36px;
+    object-fit: contain;
+    background: #e5e5e5;
+    flex-shrink: 0;
+}
+
+.searchdetails {
+    min-width: 0;
+}
+
+.searchtitle {
+    color: #292b2e;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.searchplayers {
+    margin-top: 3px;
+    color: #85868a;
+    font-size: 10px;
+}
+
+.searchempty {
+    padding: 12px 8px;
+    color: #85868a;
+    font-size: 12px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 44px;
+    left: 0;
+    bottom: 0;
+    z-index: 90;
+    width: 162px;
+    background: #e1e2e6;
+    overflow-y: auto;
+}
+
+.user {
+    padding: 16px 12px 12px;
+    color: #686a70;
+    font-size: 13px;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background: #c9cacf;
+}
+
+.discord {
+    width: calc(100% - 20px);
+    height: 30px;
+    margin: 12px 10px 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 7px;
+    background: #00b259;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.home {
+    padding: 8px 12px;
+    color: #686a70;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.home svg {
+    width: 27px;
+    height: 27px;
+    fill: #ffffff;
+    stroke: #686a70;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.main {
+    margin-left: 162px;
+    padding: 70px 210px;
+}
+
+.main h1 {
+    margin: 0;
+    color: #18191b;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.mainline {
+    width: 100%;
+    height: 1px;
+    margin-top: 14px;
+    background: #c8c9cc;
+}
+
+.main h2 {
+    margin: 18px 0 0;
+    color: #34363a;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.game {
+    min-width: 0;
+}
+
+.thumb {
+    width: 100%;
+    aspect-ratio: 1.7 / 1;
+    background: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.title {
+    margin-top: 7px;
+    color: #292b2e;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.players {
+    margin-top: 3px;
+    color: #8a8b8e;
+    font-size: 11px;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 5px;
+    color: #85868a;
+    font-size: 11px;
+}
+
+.likes svg {
+    width: 13px;
+    height: 13px;
+    fill: #85868a;
+    stroke: #85868a;
+    stroke-width: 1;
+    stroke-linejoin: round;
+}
+
+.homesection {
+    margin-top: 18px;
+    padding-top: 0;
+}
+
+.homesection + .homesection {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #c8c9cc;
+}
+
+.homesection h2 {
+    margin: 0 0 14px;
+    color: #34363a;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 0;
+    border: 0;
+}
+
+.homesection.hidden {
+    display: none;
+}
+
+.gamepage {
+    margin-left: 162px;
+    padding: 70px 210px;
+}
+
+.gamehero {
+    display: flex;
+    align-items: stretch;
+    gap: 22px;
+}
+
+.gameimage {
+    width: 430px;
+    aspect-ratio: 1.7 / 1;
+    background: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.gameimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gameinfo {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 2px;
+}
+
+.gameinfo h1 {
+    margin: 0 0 8px;
+    color: #18191b;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.creator {
+    color: #85868a;
+    font-size: 13px;
+}
+
+.playbutton {
+    width: 225px;
+    height: 58px;
+    margin-top: auto;
+    border-radius: 8px;
+    background: #00b259;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.playbutton svg {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+}
+
+.rating {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.ratingbar {
+    width: 100%;
+    height: 9px;
+    background: #ffffff;
+    border: 1px solid #d2d3d6;
+    overflow: hidden;
+}
+
+.likebar {
+    width: 0%;
+    height: 100%;
+    background: #aeb0b4;
+}
+
+.ratingnumbers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #85868a;
+    font-size: 12px;
+}
+
+.likecount,
+.dislikecount {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ratingnumbers svg {
+    width: 14px;
+    height: 14px;
+    fill: #85868a;
+}
+
+.scriptsection {
+    margin-top: 28px;
+}
+
+.sectiontitle {
+    margin-bottom: 9px;
+    color: #34363a;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.codewrapper {
+    position: relative;
+}
+
+.codeblock {
+    width: 100%;
+    min-height: 220px;
+    max-height: 600px;
+    margin: 0;
+    padding: 18px 54px 18px 16px;
+    background: #1e1f22;
+    border-radius: 7px;
+    color: #d7d9dd;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.copybutton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: #303238;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.copybutton svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: #c8c9cc;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.copybutton.copied {
+    background: #00b259;
+}
+
+.copybutton.copied svg {
+    stroke: #ffffff;
+}
+
+.lua-comment {
+    color: #6f737b;
+}
+
+.lua-string {
+    color: #b8d68a;
+}
+
+.lua-keyword {
+    color: #d69ac7;
+}
+
+.lua-number {
+    color: #9fc7e8;
+}
+
+.lua-function {
+    color: #7dc8e8;
+}
+
+.lua-variable {
+    color: #e1e3e6;
+}
+
+.lua-property {
+    color: #d9b77d;
+}
+
+.lua-builtin {
+    color: #8fc7d9;
+}
+
+.lua-operator {
+    color: #b9a7d8;
+}
+
+.lua-label {
+    color: #d8a7c8;
+}
+
+.lua-punctuation {
+    color: #aeb0b4;
+}
+
+.statssection {
+    margin-top: 28px;
+}
+
+.statsgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.stat {
+    padding: 15px;
+    background: #f1f1f3;
+    border: 1px solid #d7d8db;
+}
+
+.statlabel {
+    color: #85868a;
+    font-size: 11px;
+}
+
+.statvalue {
+    margin-top: 5px;
+    color: #292b2e;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.gamespage {
+    margin-left: 162px;
+    padding: 70px 210px;
+}
+
+.gamespage h1 {
+    margin: 0;
+    color: #18191b;
+    font-size: 27px;
+}
+
+.gamespage .mainline {
+    margin-bottom: 18px;
+}
+
+.developpage {
+    margin-left: 162px;
+    padding: 70px 210px;
+}
+
+.developpage h1 {
+    margin: 0;
+    color: #18191b;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.editorwrapper {
+    width: 100%;
+    height: calc(100vh - 155px);
+    min-height: 500px;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Netware</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <a href="/" class="logolink">
+                <img src="/assets/netware.png" class="logo">
+            </a>
+
+            <div class="nav">
+                <a href="/games.html">Games</a>
+                <span>Develop</span>
+            </div>
+        </div>
+
+        <form class="search" id="searchform">
+            <input id="searchinput" type="text" placeholder="Search">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16L21 21"></path>
+            </svg>
+
+            <div id="searchresults" class="searchresults"></div>
+        </form>
+    </div>
+
+    <div class="sidebar">
+        <div class="user">Netwarian</div>
+
+        <div class="divider"></div>
+
+        <button class="discord">Join The Discord</button>
+
+        <a href="/" class="home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.5 10.5L12 4l7.5 6.5"></path>
+                <path d="M6.5 9.5V20h11V9.5"></path>
+                <path d="M9.5 20v-5.5h5V20"></path>
+            </svg>
+
+            <span>Home</span>
+        </a>
+    </div>
+
+    <main class="gamespage">
+        <h1>Games</h1>
+
+        <div class="mainline"></div>
+
+        <div id="games" class="games"></div>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+</html>

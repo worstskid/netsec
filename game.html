@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - Netware</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <a href="/" class="logolink">
+                <img src="/assets/netware.png" class="logo">
+            </a>
+
+            <div class="nav">
+                <a href="/">Home</a>
+                <a href="/games.html">Games</a>
+                <a href="/develop.html">Develop</a>
+            </div>
+        </div>
+
+        <form class="search" id="searchform">
+            <input id="searchinput" type="text" placeholder="Search">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16L21 21"></path>
+            </svg>
+
+            <div id="searchresults" class="searchresults"></div>
+        </form>
+    </div>
+
+    <div class="sidebar">
+        <div class="user">Netwarian</div>
+
+        <div class="divider"></div>
+
+        <button class="discord" id="discordbutton">Join The Discord</button>
+
+        <a href="/" class="home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.5 10.5L12 4l7.5 6.5"></path>
+                <path d="M6.5 9.5V20h11V9.5"></path>
+                <path d="M9.5 20v-5.5h5V20"></path>
+            </svg>
+
+            <span>Home</span>
+        </a>
+    </div>
+
+    <main class="gamepage">
+        <div class="gamehero">
+            <div class="gameimage">
+                <img id="gameimage" src="" alt="">
+            </div>
+
+            <div class="gameinfo">
+                <h1 id="gametitle">Loading...</h1>
+
+                <div class="creator" id="creator">
+                    Loading...
+                </div>
+
+                <a id="playbutton" class="playbutton" href="#" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 5.5v13l10-6.5-10-6.5z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="rating">
+            <div class="ratingbar">
+                <div class="likebar" id="likebar"></div>
+            </div>
+
+            <div class="ratingnumbers">
+                <div class="likecount">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 10v10H4V10h3zm2 10h7.5c.8 0 1.5-.5 1.8-1.2l2-6c.4-1.2-.5-2.5-1.8-2.5H14l.8-4.2c.1-.6-.1-1.2-.6-1.6L13 4l-4 6v10z"></path>
+                    </svg>
+
+                    <span id="statlikes">—</span>
+                </div>
+
+                <div class="dislikecount">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M7 14V4H4v10h3zm2-10h7.5c.8 0 1.5.5 1.8 1.2l2 6c.4 1.2-.5 2.5-1.8 2.5H14l.8 4.2c.1.6-.1 1.2-.6 1.6L13 20l-4-6V4z"></path>
+                    </svg>
+
+                    <span id="statdislikes">—</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="scriptsection">
+            <div class="sectiontitle">Script</div>
+
+            <div class="codewrapper">
+                <button class="copybutton" id="copybutton" title="Copy script">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="8" y="8" width="11" height="12" rx="2"></rect>
+                        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"></path>
+                    </svg>
+                </button>
+
+                <pre class="codeblock"><code id="gamecode">Loading script...</code></pre>
+            </div>
+        </section>
+
+        <section class="statssection">
+            <div class="sectiontitle">Stats</div>
+
+            <div class="statsgrid">
+                <div class="stat">
+                    <div class="statlabel">Players</div>
+                    <div class="statvalue" id="players">—</div>
+                </div>
+
+                <div class="stat">
+                    <div class="statlabel">Visits</div>
+                    <div class="statvalue" id="visits">—</div>
+                </div>
+
+                <div class="stat">
+                    <div class="statlabel">Upvotes</div>
+                    <div class="statvalue" id="upvotes">—</div>
+                </div>
+
+                <div class="stat">
+                    <div class="statlabel">Downvotes</div>
+                    <div class="statvalue" id="downvotes">—</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/script.js"></script>
+    <script src="/game.js"></script>
+</body>
+</html>
